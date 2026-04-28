@@ -1,7 +1,13 @@
-// MOBILE
+@font-face {
+  font-family: "SuperFunky";
+  src: url("./background/SuperFunky.ttf") format("truetype");
+}
+
 $primary-bg: #133c55;
 $secondary: #ffecd1;
+$border-color: $secondary;
 
+/* MIXIN */
 @mixin card-layout {
   text-align: center;
   font-family: Verdana, sans-serif;
@@ -10,30 +16,112 @@ $secondary: #ffecd1;
   margin-top: 60px;
   font-weight: bold;
   font-size: 50px;
-
-  @font-face {
-    font-family: "SuperFunky";
-    src: url("./background/SuperFunky.ttf") format("truetype");
-  }
-}
-
-h2.intro {
-  @include card-layout;
-  font-family: "Superfunky", sans-serif;
 }
 
 body {
   background-color: $primary-bg;
 }
 
-h1 {
+h1,
+h2.intro {
   @include card-layout;
-  font-family: "Superfunky", sans-serif;
+  font-family: "SuperFunky", sans-serif;
 }
 
 section p {
   @include card-layout;
   color: $secondary;
-  font-size: 15px;
+  font-size: 35px;
   font-family: "PT Serif", serif;
+}
+
+.rules-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rule-box {
+  border: 2px solid $border-color;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 180px;
+  transition: background-color 0.3s ease;
+}
+
+.rule-box:hover {
+  background-color: #03045e;
+}
+.rule-box h3 {
+  margin-bottom: 10px;
+  font-family: "SuperFunky", sans-serif;
+  color: $secondary;
+}
+
+.rule-box p {
+  font-size: 0.9rem;
+  font-family: Verdana, sans-serif;
+}
+
+.sticker-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.sticker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticker-img {
+  width: 300px;
+  height: auto;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: $secondary;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .sticker img {
+    width: 35px;
+  }
+
+  .rules-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

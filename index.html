@@ -8,25 +8,61 @@
   </head>
 
   <body>
-    <header>
+    <header class="header-container">
       <h1>WELCOME TO THE ULTIMATE GAME OF...</h1>
     </header>
 
     <main>
       <section id="intro">
         <h2 class="intro">Tic-Tac-Toe</h2>
-        <p>You know the rules right? No? 😮 Well focus!</p>
 
         <p>THE RULES ✨</p>
-        <p>RULE 1: Two-player game played on a grid</p>
-        <p>
-          RULE 2: You alternate placing your mark in an empty square, aiming to
-          get three in a row (horizontally, vertically, or diagonally)
-        </p>
-        <p>
-          RULE 3: Player to do so wins; if all nine squares fill up without
-          this, the game is a draw! just hit "Rematch" to start again
-        </p>
+
+        <div class="rules-container">
+          <div class="rule-box">
+            <h3>Rule 1</h3>
+            <p>
+              Two-player game, so grab a partner and look into thier eyes and
+              say "are you ready to lose!"
+            </p>
+          </div>
+
+          <div class="rule-box">
+            <h3>Rule 2</h3>
+            <p>
+              You alternate placing your mark in an empty square, aiming to get
+              three in a row (horizontally, vertically, or diagonally).
+            </p>
+          </div>
+
+          <div class="rule-box">
+            <h3>Rule 3</h3>
+            <p>
+              Player to do so wins; if all nine squares fill up without this,
+              the game is a draw! Just hit "Rematch" to start again.
+            </p>
+          </div>
+        </div>
+
+        <div class="sticker-container">
+          <img
+            src="./assets/lets-go.png"
+            alt="Lets go sticker"
+            class="sticker-img"
+          />
+        </div>
+
+        <div class="board">
+          <div class="cell" data-index="0"></div>
+          <div class="cell" data-index="1"></div>
+          <div class="cell" data-index="2"></div>
+          <div class="cell" data-index="3"></div>
+          <div class="cell" data-index="4"></div>
+          <div class="cell" data-index="5"></div>
+          <div class="cell" data-index="6"></div>
+          <div class="cell" data-index="7"></div>
+          <div class="cell" data-index="8"></div>
+        </div>
       </section>
     </main>
   </body>
