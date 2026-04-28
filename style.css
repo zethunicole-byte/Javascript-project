@@ -1,0 +1,58 @@
+h2.intro {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  color: #ffecd1;
+  padding: 20px;
+  margin-top: 60px;
+  font-weight: bold;
+  font-size: 50px;
+}
+@font-face {
+  font-family: "SuperFunky";
+  src: url("./background/SuperFunky.ttf") format("truetype");
+}
+h2.intro {
+  font-family: "Superfunky", sans-serif;
+}
+
+body {
+  background-color: #133c55;
+}
+
+h1 {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  color: #ffecd1;
+  padding: 20px;
+  margin-top: 60px;
+  font-weight: bold;
+  font-size: 50px;
+}
+@font-face {
+  font-family: "SuperFunky";
+  src: url("./background/SuperFunky.ttf") format("truetype");
+}
+h1 {
+  font-family: "Superfunky", sans-serif;
+}
+
+section p {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  color: #ffecd1;
+  padding: 20px;
+  margin-top: 60px;
+  font-weight: bold;
+  font-size: 50px;
+}
+@font-face {
+  font-family: "SuperFunky";
+  src: url("./background/SuperFunky.ttf") format("truetype");
+}
+section p {
+  color: #ffecd1;
+  font-size: 15px;
+  font-family: "PT Serif", serif;
+}
+
+/*# sourceMappingURL=style.css.map */
