@@ -81,6 +81,12 @@ section p {
   height: auto;
 }
 
+#player1-card,
+#player2-card {
+  color: #87bfff;
+  font-size: 35px;
+}
+
 .players-container {
   display: flex;
   justify-content: center;
@@ -144,6 +150,13 @@ section p {
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 0;
+}
+
+#start-game:hover,
+#restart-game:hover {
+  background-color: #ffecd1;
+  color: #133c55;
+  transform: scale(1.08);
 }
 
 .board {

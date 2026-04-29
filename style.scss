@@ -6,6 +6,7 @@
 $primary-bg: #133c55;
 $secondary: #ffecd1;
 $border-color: $secondary;
+$player-color: #e63946;
 
 /* MIXIN */
 @mixin card-layout {
@@ -85,6 +86,12 @@ section p {
   height: auto;
 }
 
+#player1-card,
+#player2-card {
+  color: #87bfff;
+  font-size: 35px;
+}
+
 .players-container {
   display: flex;
   justify-content: center;
@@ -149,6 +156,14 @@ section p {
   transition: all 0.3s ease;
   margin: 0;
 }
+
+#start-game:hover,
+#restart-game:hover {
+  background-color: $secondary;
+  color: $primary-bg;
+  transform: scale(1.08);
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, clamp(70px, 18vw, 120px));
