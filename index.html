@@ -43,14 +43,29 @@
             </p>
           </div>
         </div>
-
         <div class="sticker-container">
           <img
-            src="./assets/lets-go.png"
-            alt="Lets go sticker"
+            src="./assets/xoxo-sticker.png"
+            alt="XOXO sticker"
             class="sticker-img"
           />
         </div>
+
+        <div class="players-container">
+          <div class="player-card" id="player1-card">
+            <input type="text" id="player1-name" placeholder="Enter name" />
+            <h4 id="player1-display">Player 1</h4>
+            <p>Score: <span id="player1-score">0</span></p>
+          </div>
+
+          <div class="player-card" id="player2-card">
+            <input type="text" id="player2-name" placeholder="Enter name" />
+            <h4 id="player2-display">Player 2</h4>
+            <p>Score: <span id="player2-score">0</span></p>
+          </div>
+        </div>
+
+        <button id="start-game">Start Game</button>
 
         <div class="board">
           <div class="cell" data-index="0"></div>
