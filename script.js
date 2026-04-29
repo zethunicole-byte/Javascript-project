@@ -1,40 +1,96 @@
+const cells = document.querySelectorAll(".cell");
+
 const player1Input = document.getElementById("player1-name");
 const player2Input = document.getElementById("player2-name");
 
 const player1Display = document.getElementById("player1-display");
 const player2Display = document.getElementById("player2-display");
 
+const player1Card = document.getElementById("player1-card");
+const player2Card = document.getElementById("player2-card");
+
 const player1Score = document.getElementById("player1-score");
 const player2Score = document.getElementById("player2-score");
 
-const startGameBtn = document.getElementById("start-game");
-const restartGameBtn = document.getElementById("restart-game");
+const startBtn = document.getElementById("start-game");
+const restartBtn = document.getElementById("restart-game");
 
-let gameState = {
-  players: [],
-  scores: [0, 0],
-  currentPlayer: 0,
+let currentPlayer = "";
+let gameActive = false;
+
+let players = {
+  x: "",
+  o: "",
 };
 
-startGameBtn.addEventListener("click", () => {
-  const name1 = player1Input.value || "Player 1";
-  const name2 = player2Input.value || "Player 2";
+let scores = {
+  player1: 0,
+  player2: 0,
+};
 
-  gameState.players = [name1, name2].sort(() => Math.random() - 0.5);
-  gameState.scores = [0, 0];
-  gameState.currentPlayer = 0;
+startBtn.addEventListener("click", () => {
+  const p1Name = player1Input.value || "Player 1";
+  const p2Name = player2Input.value || "Player 2";
 
-  player1Display.textContent = `${gameState.players[0]} (X)`;
-  player2Display.textContent = `${gameState.players[1]} (O)`;
+  player1Display.textContent = p1Name;
+  player2Display.textContent = p2Name;
 
-  updateScores();
+  const random = Math.random() < 0.5;
 
-  console.log("Game started");
+  if (random) {
+    players.x = p1Name;
+    players.o = p2Name;
+
+    player1Display.textContent = `${p1Name} (X)`;
+    player2Display.textContent = `${p2Name} (O)`;
+
+    player1Card.classList.add("active");
+    player2Card.classList.remove("active");
+  } else {
+    players.x = p2Name;
+    players.o = p1Name;
+
+    player1Display.textContent = `${p1Name} (O)`;
+    player2Display.textContent = `${p2Name} (X)`;
+
+    player2Card.classList.add("active");
+    player1Card.classList.remove("active");
+  }
+
+  currentPlayer = "x";
+  gameActive = true;
+});
+cells.forEach((cell) => {
+  cell.addEventListener("click", () => {
+    if (!gameActive || cell.textContent !== "") return;
+
+    cell.textContent = currentPlayer;
+    cell.classList.add(currentPlayer);
+
+    if (currentPlayer === "x") {
+      currentPlayer = "o";
+      player1Card.classList.remove("active");
+      player2Card.classList.add("active");
+    } else {
+      currentPlayer = "x";
+      player2Card.classList.remove("active");
+      player1Card.classList.add("active");
+    }
+  });
 });
 
-restartGameBtn.addEventListener("click", () => {
-  gameState.scores = [0, 0];
-  gameState.currentPlayer = 0;
+restartBtn.addEventListener("click", () => {
+  cells.forEach((cell) => {
+    cell.textContent = "";
+    cell.classList.remove("x", "o");
+  });
+
+  gameActive = false;
+  currentPlayer = "";
+  players = { x: "", o: "" };
+
+  player1Card.classList.remove("active");
+  player2Card.classList.remove("active");
 
   player1Display.textContent = "Player 1";
   player2Display.textContent = "Player 2";
@@ -42,19 +98,10 @@ restartGameBtn.addEventListener("click", () => {
   player1Input.value = "";
   player2Input.value = "";
 
-  updateScores();
+  // reset scores
+  scores.player1 = 0;
+  scores.player2 = 0;
 
-  console.log("Game fully reset");
+  player1Score.textContent = 0;
+  player2Score.textContent = 0;
 });
-
-function updateScores() {
-  player1Score.textContent = gameState.scores[0];
-  player2Score.textContent = gameState.scores[1];
-}
-
-function addWin(playerIndex) {
-  gameState.scores[playerIndex]++;
-  updateScores();
-}
-
-console.log("script loaded correctly");
