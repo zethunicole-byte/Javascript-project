@@ -11,21 +11,21 @@ Tech used: HTML, SCSS, Javascript
 - [] Bullet point NOT DONE
 - [x} bullet point DONE
 
-- [] Status display - shows current player or game result
-- [] Game board (3x3 grid) - 9 clickable cells
+- [x] Status display - shows current player or game result
+- [x] Game board (3x3 grid) - 9 clickable cells
 - [] Knots & Crosses
 - [] Restart button - allows players to reset the game
 
 # CSS / SCSS
 
-- [] Background - any color that allows the text and the game board to be visible
-- [] Font size
-- [] Hover effect
-- [] Grid elements, gaps and width - create a 3x3 grid layout
-- [] Board colour
-- [] Game layout - center the game on the page
-- [] Size, borders and alignment
-- [] Cells - Size, borders, aligment, clickable
+- [x] Background - any color that allows the text and the game board to be visible
+- [x] Font size
+- [x] Hover effect
+- [x] Grid elements, gaps and width - create a 3x3 grid layout
+- [x] Board colour
+- [x] Game layout - center the game on the page
+- [x] Size, borders and alignment
+- [x] Cells - Size, borders, aligment, clickable
 - [] Status text - style the winner, game result, restart game
 - [] Reset button - make it clear and clickable
 
