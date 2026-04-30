@@ -111,12 +111,12 @@ section p {
   margin-bottom: 20px;
   font-family: "SuperFunky", sans-serif;
   color: $player-color;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .player-card p {
   font-family: Verdana, sans-serif;
-  font-size: 1rem;
+  font-size: 20;
 }
 
 .player-card input {
@@ -145,7 +145,7 @@ section p {
   background-color: transparent;
   color: $secondary;
   font-family: "SuperFunky", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
   transition: all 0.3s ease;
 }

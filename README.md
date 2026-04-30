@@ -31,17 +31,17 @@ Tech used: HTML, SCSS, Javascript
 
 # JS Logic
 
-- [] When a user clicks on a cell, the current player’s symbol (X or O) should be added to that cell
-- [] When a cell is already filled, clicking it again should do nothing
-- [] After a valid move, the game should check if there is a winner
-- [] If a player has 3 in a row, display a win message and stop the game
-- [] If all cells are filled and there is no winner, display a draw message
-- [] After a valid move and no winner, switch to the other player
-- [] The status text should update to show the next player’s turn
-- [] When the game is over, no further moves should be allowed
-- [] When the restart button is clicked, the board should reset to empty
-- [] When restarting, the current player should reset to X
-- [] When restarting, the game status should reset to “Player X’s turn”
+- [x] When a user clicks on a cell, the current player’s symbol (X or O) should be added to that cell
+- [x] When a cell is already filled, clicking it again should do nothing
+- [x] After a valid move, the game should check if there is a winner
+- [x] If a player has 3 in a row, display a win message and stop the game
+- [x] If all cells are filled and there is no winner, display a draw message
+- [x] After a valid move and no winner, switch to the other player
+- [x] The status text should update to show the next player’s turn
+- [x] When the game is over, no further moves should be allowed
+- [x] When the restart button is clicked, the board should reset to empty
+- [x] When restarting, the current player should reset to X
+- [x] When restarting, the game status should reset to “Player X’s turn”
 
 ## Lesson Learned:
 
