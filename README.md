@@ -26,7 +26,7 @@ Tech used: HTML, SCSS, Javascript
 - [x] Game layout - center the game on the page
 - [x] Size, borders and alignment
 - [x] Cells - Size, borders, aligment, clickable
-- [] Status text - style the winner, game result, restart game
+- [x] Status text - style the winner, game result, restart game
 - [x] Reset button - make it clear and clickable
 
 # JS Logic
@@ -45,4 +45,4 @@ Tech used: HTML, SCSS, Javascript
 
 ## Lesson Learned:
 
-The main of this project is to practice core front-end development skills and version control using Git and GitHub.
+The main of this project is to practice core front-end development skills and version control using all the tech tools mentioned above and Git and GitHub.
