@@ -56,7 +56,7 @@ section p {
 }
 
 .rule-box:hover {
-  background-color: #2a4494;
+  background-color: #ef233c;
 }
 
 .rule-box h3 {
@@ -121,6 +121,10 @@ section p {
   border-radius: 12px;
   text-align: center;
   display: block;
+}
+
+.player-card:hover {
+  background-color: #ef233c;
 }
 
 .button-container {

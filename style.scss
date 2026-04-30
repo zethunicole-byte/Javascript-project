@@ -10,6 +10,7 @@ $player-color: #bfdbf7;
 
 $player-x-color: #ff006e;
 $player-o-color: #2a9d8f;
+$hover-colour: #ef233c;
 
 /* MIXIN */
 @mixin card-layout {
@@ -62,7 +63,7 @@ section p {
 }
 
 .rule-box:hover {
-  background-color: #2a4494;
+  background-color: $hover-colour;
 }
 
 .rule-box h3 {
@@ -127,6 +128,10 @@ section p {
   border-radius: 12px;
   text-align: center;
   display: block;
+}
+
+.player-card:hover {
+  background-color: #ef233c;
 }
 
 .button-container {
