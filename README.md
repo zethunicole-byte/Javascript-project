@@ -14,7 +14,7 @@ Tech used: HTML, SCSS, Javascript
 - [x] Status display - shows current player or game result
 - [x] Game board (3x3 grid) - 9 clickable cells
 - [] Knots & Crosses
-- [] Restart button - allows players to reset the game
+- [x] Restart button - allows players to reset the game
 
 # CSS / SCSS
 
@@ -27,7 +27,7 @@ Tech used: HTML, SCSS, Javascript
 - [x] Size, borders and alignment
 - [x] Cells - Size, borders, aligment, clickable
 - [] Status text - style the winner, game result, restart game
-- [] Reset button - make it clear and clickable
+- [x] Reset button - make it clear and clickable
 
 # JS Logic
 

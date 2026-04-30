@@ -21,28 +21,20 @@
         <div class="rules-container">
           <div class="rule-box">
             <h3>Rule 1</h3>
-            <p>
-              Two-player game, so grab a partner and look into thier eyes and
-              say "are you ready to lose!"
-            </p>
+            <p>Two-player game, so grab a partner and play!</p>
           </div>
 
           <div class="rule-box">
             <h3>Rule 2</h3>
-            <p>
-              You alternate placing your mark in an empty square, aiming to get
-              three in a row (horizontally, vertically, or diagonally).
-            </p>
+            <p>Alternate placing X or O in empty squares to get 3 in a row.</p>
           </div>
 
           <div class="rule-box">
             <h3>Rule 3</h3>
-            <p>
-              Player to do so wins; if all nine squares fill up without this,
-              the game is a draw! Just hit "Rematch" to start again.
-            </p>
+            <p>First to 3 in a row wins. If full board = draw.</p>
           </div>
         </div>
+
         <div class="sticker-container">
           <img
             src="./assets/xoxo-sticker.png"
@@ -52,15 +44,15 @@
         </div>
 
         <div class="players-container">
-          <div class="player-card" id="player1-card">
+          <div class="player-card active" id="player1-card">
             <input type="text" id="player1-name" placeholder="Enter name" />
-            <h4 id="player1-display">Player 1</h4>
+            <h4 id="player1-display">Player 1 (X)</h4>
             <p>Score: <span id="player1-score">0</span></p>
           </div>
 
           <div class="player-card" id="player2-card">
             <input type="text" id="player2-name" placeholder="Enter name" />
-            <h4 id="player2-display">Player 2</h4>
+            <h4 id="player2-display">Player 2 (O)</h4>
             <p>Score: <span id="player2-score">0</span></p>
           </div>
         </div>
@@ -83,6 +75,7 @@
         </div>
       </section>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>
