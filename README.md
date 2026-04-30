@@ -13,7 +13,7 @@ Tech used: HTML, SCSS, Javascript
 
 - [x] Status display - shows current player or game result
 - [x] Game board (3x3 grid) - 9 clickable cells
-- [] Knots & Crosses
+- [x] Knots & Crosses
 - [x] Restart button - allows players to reset the game
 
 # CSS / SCSS

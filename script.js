@@ -28,6 +28,43 @@ let scores = {
   player2: 0,
 };
 
+const winningCombinations = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
+function checkWinner() {
+  for (let combo of winningCombinations) {
+    const [a, b, c] = combo;
+
+    if (
+      cells[a].textContent &&
+      cells[a].textContent === cells[b].textContent &&
+      cells[a].textContent === cells[c].textContent
+    ) {
+      alert("Winner!");
+      gameActive = false;
+      return true;
+    }
+  }
+
+  const draw = [...cells].every((cell) => cell.textContent !== "");
+
+  if (draw) {
+    alert("Wow both losers?");
+    gameActive = false;
+    return true;
+  }
+
+  return false;
+}
+
 startBtn.addEventListener("click", () => {
   const p1Name = player1Input.value || "Player 1";
   const p2Name = player2Input.value || "Player 2";
@@ -60,12 +97,15 @@ startBtn.addEventListener("click", () => {
   currentPlayer = "x";
   gameActive = true;
 });
+
 cells.forEach((cell) => {
   cell.addEventListener("click", () => {
     if (!gameActive || cell.textContent !== "") return;
 
     cell.textContent = currentPlayer;
     cell.classList.add(currentPlayer);
+
+    if (checkWinner()) return;
 
     if (currentPlayer === "x") {
       currentPlayer = "o";
@@ -98,7 +138,6 @@ restartBtn.addEventListener("click", () => {
   player1Input.value = "";
   player2Input.value = "";
 
-  // reset scores
   scores.player1 = 0;
   scores.player2 = 0;
 
