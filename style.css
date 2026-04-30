@@ -110,7 +110,7 @@ section p {
 
 .player-card p {
   font-family: Verdana, sans-serif;
-  font-size: 1rem;
+  font-size: 30px;
 }
 
 .player-card input {
@@ -121,6 +121,10 @@ section p {
   border-radius: 12px;
   text-align: center;
   display: block;
+}
+
+.player-card:hover {
+  background-color: #2a4494;
 }
 
 .button-container {
@@ -170,7 +174,9 @@ section p {
   font-weight: bold;
   cursor: pointer;
   background-color: #ffecd1;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
   font-weight: bold; /* 🔥 NEW */
 }
 
