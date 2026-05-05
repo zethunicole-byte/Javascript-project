@@ -40,6 +40,7 @@ Tech used: HTML, SCSS, Javascript
 - [x] The status text should update to show the next player’s turn
 - [x] When the game is over, no further moves should be allowed
 - [x] When the restart button is clicked, the board should reset to empty
+- [] When the player wins the score should update to 1 or 2 or 3 as they contiune to play and then restart when the restart button is pressed.
 - [x] When restarting, the current player should reset to X
 - [x] When restarting, the game status should reset to “Player X’s turn”
 
