@@ -48,7 +48,20 @@ function checkWinner() {
       cells[a].textContent === cells[b].textContent &&
       cells[a].textContent === cells[c].textContent
     ) {
-      alert("Winner!");
+      const winningSymbol = cells[a].textContent;
+      const winnerName = players[winningSymbol];
+
+      if (
+        winnerName === player1Display.textContent.replace(/ \([XO]\)$/i, "")
+      ) {
+        scores.player1++;
+        player1Score.textContent = scores.player1;
+      } else {
+        scores.player2++;
+        player2Score.textContent = scores.player2;
+      }
+
+      alert(`${winnerName} wins!`);
       gameActive = false;
       return true;
     }
@@ -137,10 +150,4 @@ restartBtn.addEventListener("click", () => {
 
   player1Input.value = "";
   player2Input.value = "";
-
-  scores.player1 = 0;
-  scores.player2 = 0;
-
-  player1Score.textContent = 0;
-  player2Score.textContent = 0;
 });
