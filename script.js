@@ -9,9 +9,6 @@ const player2Display = document.getElementById("player2-display");
 const player1Card = document.getElementById("player1-card");
 const player2Card = document.getElementById("player2-card");
 
-const player1Score = document.getElementById("player1-score");
-const player2Score = document.getElementById("player2-score");
-
 const startBtn = document.getElementById("start-game");
 const restartBtn = document.getElementById("restart-game");
 
@@ -21,11 +18,6 @@ let gameActive = false;
 let players = {
   x: "",
   o: "",
-};
-
-let scores = {
-  player1: 0,
-  player2: 0,
 };
 
 const winningCombinations = [
@@ -50,16 +42,6 @@ function checkWinner() {
     ) {
       const winningSymbol = cells[a].textContent;
       const winnerName = players[winningSymbol];
-
-      if (
-        winnerName === player1Display.textContent.replace(/ \([XO]\)$/i, "")
-      ) {
-        scores.player1++;
-        player1Score.textContent = scores.player1;
-      } else {
-        scores.player2++;
-        player2Score.textContent = scores.player2;
-      }
 
       alert(`${winnerName} wins!`);
       gameActive = false;
