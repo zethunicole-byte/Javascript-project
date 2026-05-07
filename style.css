@@ -4,6 +4,10 @@
 }
 body {
   background-color: #5fa8d3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* LOGO */
@@ -151,12 +155,75 @@ button:hover {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .layout {
-    flex-direction: column;
-    align-items: center;
+  h1 {
+    font-size: 13px;
+    margin: 2px 0;
   }
   .logo-img {
-    width: 55px;
+    width: 35px;
+    margin-top: 4px;
+  }
+  .layout {
+    flex-direction: row;
+    gap: 8px;
+    padding: 6px;
+    align-items: flex-start;
+  }
+  .rules-container {
+    width: 100px;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .rules-title {
+    font-size: 10px;
+  }
+  .rule-box {
+    padding: 5px;
+  }
+  .rule-box h3 {
+    font-size: 10px;
+    margin: 0 0 3px;
+  }
+  .rule-box p {
+    font-size: 9px;
+    margin: 0;
+  }
+  .players-container {
+    gap: 6px;
+  }
+  .player-card {
+    padding: 5px;
+    max-width: 85px;
+  }
+  .player-card h4 {
+    font-size: 10px;
+    margin: 3px 0;
+  }
+  .player-card input {
+    width: 100%;
+    font-size: 10px;
+    box-sizing: border-box;
+  }
+  .score {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  .button-container {
+    margin: 6px 0;
+    gap: 4px;
+  }
+  button {
+    padding: 4px 5px;
+    font-size: 9px;
+  }
+  .board {
+    grid-template-columns: repeat(3, 50px);
+    gap: 4px;
+  }
+  .cell {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
   }
 }
 
