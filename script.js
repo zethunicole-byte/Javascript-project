@@ -10,6 +10,10 @@ const startBtn = document.getElementById("start-game");
 const restartBtn = document.getElementById("restart-game");
 const playAgainBtn = document.getElementById("play-again");
 
+const gameMessage = document.getElementById("game-message");
+const messageText = document.getElementById("message-text");
+const dismissBtn = document.getElementById("dismiss-message");
+
 let gameActive = false;
 let currentPlayer = "x";
 
@@ -39,6 +43,11 @@ function resetBoard() {
   });
 }
 
+function showMessage(text) {
+  messageText.textContent = text;
+  gameMessage.classList.remove("hidden");
+}
+
 function checkWinner() {
   for (let [a, b, c] of wins) {
     if (
@@ -47,7 +56,7 @@ function checkWinner() {
       cells[a].textContent === cells[c].textContent
     ) {
       const symbol = cells[a].textContent;
-      alert(players[symbol] + " wins!");
+      showMessage(players[symbol] + " wins! 🎉");
 
       if (symbol === "x") {
         scoreX++;
@@ -63,7 +72,7 @@ function checkWinner() {
   }
 
   if ([...cells].every((c) => c.textContent !== "")) {
-    alert("both losers 💀");
+    showMessage("both losers 💀");
     gameActive = false;
     return true;
   }
@@ -82,6 +91,7 @@ startBtn.addEventListener("click", () => {
   }
 
   resetBoard();
+  gameMessage.classList.add("hidden");
 
   if (Math.random() < 0.5) {
     players.x = p1;
@@ -111,16 +121,23 @@ cells.forEach((cell) => {
     currentPlayer = currentPlayer === "x" ? "o" : "x";
   });
 });
+
+dismissBtn.addEventListener("click", () => {
+  gameMessage.classList.add("hidden");
+});
+
 // PLAY AGAIN
 playAgainBtn?.addEventListener("click", () => {
   resetBoard();
+  gameMessage.classList.add("hidden");
   currentPlayer = "x";
   gameActive = true;
 });
 
-//RESTART
+// RESTART
 restartBtn.addEventListener("click", () => {
   resetBoard();
+  gameMessage.classList.add("hidden");
 
   gameActive = false;
   currentPlayer = "x";
