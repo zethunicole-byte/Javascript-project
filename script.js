@@ -99,27 +99,26 @@ startBtn.addEventListener("click", () => {
   gameActive = true;
 });
 
-/* CLICK CELLS */
 cells.forEach((cell) => {
   cell.addEventListener("click", () => {
     if (!gameActive || cell.textContent) return;
 
     cell.textContent = currentPlayer;
+    cell.classList.add(currentPlayer);
 
     if (checkWinner()) return;
 
     currentPlayer = currentPlayer === "x" ? "o" : "x";
   });
 });
-
-/* PLAY AGAIN */
+// PLAY AGAIN
 playAgainBtn?.addEventListener("click", () => {
   resetBoard();
   currentPlayer = "x";
   gameActive = true;
 });
 
-/* RESTART */
+//RESTART
 restartBtn.addEventListener("click", () => {
   resetBoard();
 

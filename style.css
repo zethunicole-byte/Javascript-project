@@ -10,7 +10,6 @@ body {
   justify-content: center;
 }
 
-/* LOGO */
 .logo-container {
   display: flex;
   justify-content: center;
@@ -21,7 +20,6 @@ body {
   margin-top: 10px;
 }
 
-/* TITLES */
 h1,
 h2.intro {
   font-family: "SuperFunky", sans-serif;
@@ -37,7 +35,6 @@ h2.intro {
   font-size: clamp(22px, 4vw, 40px);
 }
 
-/* LAYOUT */
 .layout {
   display: flex;
   gap: 40px;
@@ -46,7 +43,6 @@ h2.intro {
   padding: 20px;
 }
 
-/* RULES */
 .rules-container {
   display: flex;
   flex-direction: column;
@@ -61,7 +57,6 @@ h2.intro {
   text-align: center;
 }
 
-/* RULE BOX */
 .rule-box {
   border: 2px solid #ffecd1;
   padding: 15px;
@@ -75,13 +70,11 @@ h2.intro {
   background-color: #ef233c;
 }
 
-/* GAME AREA */
 .main-content {
   flex: 1;
   text-align: center;
 }
 
-/* PLAYERS */
 .players-container {
   display: flex;
   gap: 40px;
@@ -103,12 +96,22 @@ h2.intro {
   transform: scale(1.03);
 }
 
+#player1-display,
+#player2-display {
+  display: block;
+  text-align: center;
+  font-family: "SuperFunky", sans-serif;
+}
+
+.player-card input {
+  text-align: center;
+}
+
 .score {
   font-family: Verdana, sans-serif;
   margin-top: 10px;
 }
 
-/* BUTTONS */
 .button-container {
   margin: 40px 0;
   display: flex;
@@ -134,7 +137,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* BOARD */
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -151,6 +153,14 @@ button:hover {
   align-items: center;
   justify-content: center;
   font-size: 40px;
+}
+
+.cell.x {
+  color: #f72585;
+}
+
+.cell.o {
+  color: #3185fc;
 }
 
 /* MOBILE */
