@@ -3,7 +3,7 @@
   src: url("./background/SuperFunky.ttf") format("truetype");
 }
 body {
-  background-color: #5fa8d3;
+  background-color: #669bbc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,7 @@ h2.intro {
 }
 
 .rule-box {
-  border: 2px solid #ffecd1;
+  border: 2px solid #90e0ef;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
@@ -67,7 +67,7 @@ h2.intro {
 }
 
 .rule-box:hover {
-  background-color: #ef233c;
+  background-color: #f72585;
 }
 
 .main-content {
@@ -83,7 +83,7 @@ h2.intro {
 }
 
 .player-card {
-  border: 2px solid #ffecd1;
+  border: 2px solid #90e0ef;
   padding: 15px;
   border-radius: 10px;
   max-width: 180px;
@@ -92,7 +92,7 @@ h2.intro {
 }
 
 .player-card:hover {
-  background-color: #ef233c;
+  background-color: #f72585;
   transform: scale(1.03);
 }
 
@@ -122,7 +122,7 @@ h2.intro {
 
 button {
   padding: 12px 20px;
-  border: 2px solid #ffecd1;
+  border: 2px solid #90e0ef;
   background: transparent;
   color: #ffecd1;
   font-family: "SuperFunky", sans-serif;
@@ -133,7 +133,7 @@ button {
 
 button:hover {
   background: #ffecd1;
-  color: #5fa8d3;
+  color: #669bbc;
   transform: scale(1.05);
 }
 
