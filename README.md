@@ -6,10 +6,12 @@ I will be creating Tic Tac Toe as my project, which will use HTML, CSS, and Java
 
 Tech used: HTML, SCSS, Javascript
 
-# HTML
+## To-do list
 
 - [] Bullet point NOT DONE
 - [x} bullet point DONE
+
+# HTML
 
 - [x] Status display - shows current player or game result
 - [x] Game board (3x3 grid) - 9 clickable cells
