@@ -3,54 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zethu's Java project</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header class="header-container">
       <div class="logo-container">
-        <img src="./assets/xoxo-sticker.png" alt="XOXO logo" class="logo-img" />
+        <img src="./assets/xoxo-sticker.png" class="logo-img" />
       </div>
 
-      <h1>WELCOME TO THE ULTIMATE GAME OF...</h1>
+      <h1>WELCOME TO THE ULTIMATE GAME OF... Tic-Tac-Toe</h1>
     </header>
 
     <main>
       <section id="intro">
         <div class="layout">
+          <!-- LEFT RULES -->
           <aside class="rules-container">
             <p class="rules-title">✨ THE RULES ✨</p>
 
             <div class="rule-box">
               <h3>Rule 1</h3>
-              <p>Two-player game, so grab a partner and play!</p>
+              <p>Two players take turns placing X or O.</p>
             </div>
 
             <div class="rule-box">
               <h3>Rule 2</h3>
-              <p>Alternate placing X or O to get 3 in a row!</p>
+              <p>Get 3 in a row to win the game.</p>
             </div>
 
             <div class="rule-box">
               <h3>Rule 3</h3>
-              <p>First to 3 wins. Full board = draw.</p>
+              <p>Restart resets everything. Play Again keeps score.</p>
             </div>
           </aside>
 
+          <!-- RIGHT GAME -->
           <div class="main-content">
-            <h2 class="intro">Tic-Tac-Toe</h2>
-
             <div class="players-container">
-              <div class="player-card">
-                <input type="text" placeholder="Enter name" />
+              <div class="player-card" id="player1-card">
+                <input type="text" id="player1-name" placeholder="Player 1" />
                 <h4>Player 1 (X)</h4>
+                <span id="player1-display"></span>
+                <!-- ✅ ADDED -->
+                <p class="score">Score: <span id="score1">0</span></p>
               </div>
 
-              <div class="player-card">
-                <input type="text" placeholder="Enter name" />
+              <div class="player-card" id="player2-card">
+                <input type="text" id="player2-name" placeholder="Player 2" />
                 <h4>Player 2 (O)</h4>
+                <span id="player2-display"></span>
+                <!-- ✅ ADDED -->
+                <p class="score">Score: <span id="score2">0</span></p>
               </div>
+            </div>
+
+            <div class="button-container">
+              <button id="start-game">Start Game</button>
+              <button id="restart-game">Restart Game</button>
+              <button id="play-again">Let's Play Again</button>
             </div>
 
             <div class="board">
@@ -68,5 +80,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -6,21 +6,22 @@ const player2Input = document.getElementById("player2-name");
 const player1Display = document.getElementById("player1-display");
 const player2Display = document.getElementById("player2-display");
 
-const player1Card = document.getElementById("player1-card");
-const player2Card = document.getElementById("player2-card");
-
 const startBtn = document.getElementById("start-game");
 const restartBtn = document.getElementById("restart-game");
+const playAgainBtn = document.getElementById("play-again");
 
-let currentPlayer = "";
 let gameActive = false;
+let currentPlayer = "x";
 
-let players = {
-  x: "",
-  o: "",
-};
+const players = { x: "", o: "" };
 
-const winningCombinations = [
+let scoreX = 0;
+let scoreO = 0;
+
+const score1El = document.getElementById("score1");
+const score2El = document.getElementById("score2");
+
+const wins = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -31,28 +32,38 @@ const winningCombinations = [
   [2, 4, 6],
 ];
 
-function checkWinner() {
-  for (let combo of winningCombinations) {
-    const [a, b, c] = combo;
+function resetBoard() {
+  cells.forEach((c) => {
+    c.textContent = "";
+    c.classList.remove("x", "o");
+  });
+}
 
+function checkWinner() {
+  for (let [a, b, c] of wins) {
     if (
       cells[a].textContent &&
       cells[a].textContent === cells[b].textContent &&
       cells[a].textContent === cells[c].textContent
     ) {
-      const winningSymbol = cells[a].textContent;
-      const winnerName = players[winningSymbol];
+      const symbol = cells[a].textContent;
+      alert(players[symbol] + " wins!");
 
-      alert(`${winnerName} wins!`);
+      if (symbol === "x") {
+        scoreX++;
+        score1El.textContent = scoreX;
+      } else {
+        scoreO++;
+        score2El.textContent = scoreO;
+      }
+
       gameActive = false;
       return true;
     }
   }
 
-  const draw = [...cells].every((cell) => cell.textContent !== "");
-
-  if (draw) {
-    alert("Wow both losers?");
+  if ([...cells].every((c) => c.textContent !== "")) {
+    alert("both losers 💀");
     gameActive = false;
     return true;
   }
@@ -60,76 +71,73 @@ function checkWinner() {
   return false;
 }
 
+/* START GAME */
 startBtn.addEventListener("click", () => {
-  const p1Name = player1Input.value || "Player 1";
-  const p2Name = player2Input.value || "Player 2";
+  const p1 = player1Input.value.trim();
+  const p2 = player2Input.value.trim();
 
-  player1Display.textContent = p1Name;
-  player2Display.textContent = p2Name;
+  if (!p1 || !p2) {
+    alert("Enter both names!");
+    return;
+  }
 
-  const random = Math.random() < 0.5;
+  resetBoard();
 
-  if (random) {
-    players.x = p1Name;
-    players.o = p2Name;
-
-    player1Display.textContent = `${p1Name} (X)`;
-    player2Display.textContent = `${p2Name} (O)`;
-
-    player1Card.classList.add("active");
-    player2Card.classList.remove("active");
+  if (Math.random() < 0.5) {
+    players.x = p1;
+    players.o = p2;
+    player1Display.textContent = p1 + " (X)";
+    player2Display.textContent = p2 + " (O)";
   } else {
-    players.x = p2Name;
-    players.o = p1Name;
-
-    player1Display.textContent = `${p1Name} (O)`;
-    player2Display.textContent = `${p2Name} (X)`;
-
-    player2Card.classList.add("active");
-    player1Card.classList.remove("active");
+    players.x = p2;
+    players.o = p1;
+    player1Display.textContent = p1 + " (O)";
+    player2Display.textContent = p2 + " (X)";
   }
 
   currentPlayer = "x";
   gameActive = true;
 });
 
+/* CLICK CELLS */
 cells.forEach((cell) => {
   cell.addEventListener("click", () => {
-    if (!gameActive || cell.textContent !== "") return;
+    if (!gameActive || cell.textContent) return;
 
     cell.textContent = currentPlayer;
-    cell.classList.add(currentPlayer);
 
     if (checkWinner()) return;
 
-    if (currentPlayer === "x") {
-      currentPlayer = "o";
-      player1Card.classList.remove("active");
-      player2Card.classList.add("active");
-    } else {
-      currentPlayer = "x";
-      player2Card.classList.remove("active");
-      player1Card.classList.add("active");
-    }
+    currentPlayer = currentPlayer === "x" ? "o" : "x";
   });
 });
 
+/* PLAY AGAIN */
+playAgainBtn?.addEventListener("click", () => {
+  resetBoard();
+  currentPlayer = "x";
+  gameActive = true;
+});
+
+/* RESTART */
 restartBtn.addEventListener("click", () => {
-  cells.forEach((cell) => {
-    cell.textContent = "";
-    cell.classList.remove("x", "o");
-  });
+  resetBoard();
 
   gameActive = false;
-  currentPlayer = "";
-  players = { x: "", o: "" };
+  currentPlayer = "x";
 
-  player1Card.classList.remove("active");
-  player2Card.classList.remove("active");
+  players.x = "";
+  players.o = "";
+
+  player1Input.value = "";
+  player2Input.value = "";
 
   player1Display.textContent = "Player 1";
   player2Display.textContent = "Player 2";
 
-  player1Input.value = "";
-  player2Input.value = "";
+  scoreX = 0;
+  scoreO = 0;
+
+  score1El.textContent = "0";
+  score2El.textContent = "0";
 });
