@@ -40,40 +40,44 @@
           </aside>
 
           <!-- RIGHT GAME -->
-          <div class="main-content">
-            <div class="players-container">
-              <div class="player-card" id="player1-card">
-              <input type="text" id="player1-name" placeholder="Enter name" /> 
-              <h4>Player 1</h4> 
-              <p class="score">Score: <span id="score1">0</span></p>
-              </div>
+        <div class="main-content">
+  <div class="players-container">
 
-            <div class="player-card" id="player2-card">
-                 <input type="text" id="player2-name" placeholder="Enter name" /> 
-                  <h4>Player 2</h4> 
+    <div class="player-card" id="player1-card">
+      <input type="text" id="player1-name" placeholder="Enter name" />
+      <span id="player1-display"></span> <!-- ✅ put back -->
+      <p class="score">Score: <span id="score1">0</span></p>
+    </div>
 
-                  <p class="score">Score: <span id="score2">0</span></p>
-                   </div>
+    <div class="player-card" id="player2-card">
+      <input type="text" id="player2-name" placeholder="Enter name" />
 
-            <div class="button-container">
-              <button id="start-game">Start Game</button>
-              <button id="restart-game">Restart Game</button>
-              <button id="play-again">Let's Play Again</button>
-            </div>
+      <span id="player2-display"></span> <!-- ✅ put back -->
+      <p class="score">Score: <span id="score2">0</span></p>
+    </div>
 
-            <div class="board">
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-              <div class="cell"></div>
-            </div>
-          </div>
-        </div>
+  </div> 
+
+
+  <div class="button-container">
+    <button id="start-game">Start Game</button>
+    <button id="restart-game">Restart Game</button>
+    <button id="play-again">Let's Play Again</button>
+  </div>
+
+  <div class="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+</div>
       </section>
     </main>
     <script src="script.js"></script>
