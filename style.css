@@ -3,7 +3,7 @@
   src: url("./background/SuperFunky.ttf") format("truetype");
 }
 body {
-  background-color: #669bbc;
+  background-color: #3a6ea5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -133,7 +133,7 @@ button {
 
 button:hover {
   background: #ffecd1;
-  color: #669bbc;
+  color: #3a6ea5;
   transform: scale(1.05);
 }
 
