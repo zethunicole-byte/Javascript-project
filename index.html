@@ -9,71 +9,64 @@
 
   <body>
     <header class="header-container">
+      <div class="logo-container">
+        <img src="./assets/xoxo-sticker.png" alt="XOXO logo" class="logo-img" />
+      </div>
+
       <h1>WELCOME TO THE ULTIMATE GAME OF...</h1>
     </header>
 
     <main>
       <section id="intro">
-        <h2 class="intro">Tic-Tac-Toe</h2>
+        <div class="layout">
+          <aside class="rules-container">
+            <p class="rules-title">✨ THE RULES ✨</p>
 
-        <p>✨THE RULES ✨</p>
+            <div class="rule-box">
+              <h3>Rule 1</h3>
+              <p>Two-player game, so grab a partner and play!</p>
+            </div>
 
-        <div class="rules-container">
-          <div class="rule-box">
-            <h3>Rule 1</h3>
-            <p>Two-player game, so grab a partner and play!</p>
+            <div class="rule-box">
+              <h3>Rule 2</h3>
+              <p>Alternate placing X or O to get 3 in a row!</p>
+            </div>
+
+            <div class="rule-box">
+              <h3>Rule 3</h3>
+              <p>First to 3 wins. Full board = draw.</p>
+            </div>
+          </aside>
+
+          <div class="main-content">
+            <h2 class="intro">Tic-Tac-Toe</h2>
+
+            <div class="players-container">
+              <div class="player-card">
+                <input type="text" placeholder="Enter name" />
+                <h4>Player 1 (X)</h4>
+              </div>
+
+              <div class="player-card">
+                <input type="text" placeholder="Enter name" />
+                <h4>Player 2 (O)</h4>
+              </div>
+            </div>
+
+            <div class="board">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
           </div>
-
-          <div class="rule-box">
-            <h3>Rule 2</h3>
-            <p>Alternate placing X or O in empty squares to get 3 in a row!</p>
-          </div>
-
-          <div class="rule-box">
-            <h3>Rule 3</h3>
-            <p>First to 3 in a row wins. If full board = draw!</p>
-          </div>
-        </div>
-
-        <div class="sticker-container">
-          <img
-            src="./assets/xoxo-sticker.png"
-            alt="XOXO sticker"
-            class="sticker-img"
-          />
-        </div>
-
-        <div class="players-container">
-          <div class="player-card active" id="player1-card">
-            <input type="text" id="player1-name" placeholder="Enter name" />
-            <h4 id="player1-display">Player 1 (X)</h4>
-          </div>
-
-          <div class="player-card" id="player2-card">
-            <input type="text" id="player2-name" placeholder="Enter name" />
-            <h4 id="player2-display">Player 2 (O)</h4>
-          </div>
-        </div>
-
-        <div class="button-container">
-          <button id="start-game">Start Game</button>
-          <button id="restart-game">Restart Game</button>
-        </div>
-
-        <div class="board">
-          <div class="cell" data-index="0"></div>
-          <div class="cell" data-index="1"></div>
-          <div class="cell" data-index="2"></div>
-          <div class="cell" data-index="3"></div>
-          <div class="cell" data-index="4"></div>
-          <div class="cell" data-index="5"></div>
-          <div class="cell" data-index="6"></div>
-          <div class="cell" data-index="7"></div>
-          <div class="cell" data-index="8"></div>
         </div>
       </section>
     </main>
-
-    <script src="script.js"></script>
   </body>
 </html>
